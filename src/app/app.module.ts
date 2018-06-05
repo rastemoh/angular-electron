@@ -19,8 +19,13 @@ import { WebviewDirective } from './directives/webview.directive';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { DBService } from '../db/db.service';
-
+import { DBService } from './providers/db.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonService } from './providers/common.service';
+import { PersianDatePipe } from './etc/pipes/persian-date.pipe';
+import { RecordsListComponent } from './components/records-list/records-list.component';
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -30,13 +35,18 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     HomeComponent,
-    WebviewDirective
+    WebviewDirective,
+    PersianDatePipe,
+    RecordsListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
+    NgbModule.forRoot(),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(), // ToastrModule added
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -45,7 +55,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  providers: [ElectronService, DBService],
+  providers: [ElectronService, DBService, CommonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

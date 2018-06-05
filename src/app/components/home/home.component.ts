@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ElectronService } from '../../providers/electron.service';
 import { Model } from 'sequelize';
+import { CommonService } from '../../providers/common.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,8 @@ import { Model } from 'sequelize';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  constructor(private el: ElectronService, private cdr: ChangeDetectorRef) { }
+  date: any;
+  constructor(private el: ElectronService, private cdr: ChangeDetectorRef, private commonService: CommonService) { }
 
   ngOnInit() {
     if (this.el.isElectron()) {
@@ -20,6 +22,11 @@ export class HomeComponent implements OnInit {
         this.cdr.detectChanges();
       });
     }
+    this.date = new Date();
+  }
+
+  showToast() {
+    this.commonService.messageSuccess('Yes we did it!');
   }
 
 }

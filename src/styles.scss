@@ -1,7 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
-html, body {
-  margin: 0;
-  padding: 0;
+html {
+  font-size: 16px;
+}
 
-  height: 100%;
+body {
+  font-family: iranyekan ,roboto ,Arial !important;
+}
+
+.ltr {
+  direction: ltr;
+  text-align: left;
 }

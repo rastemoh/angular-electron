@@ -25,6 +25,9 @@
               "src/favicon.512x512.png"
             ],
             "styles": [
+              "node_modules/bootstrap-v4-rtl/dist/css/bootstrap-rtl.min.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "src/assets/iranyekan-font.css",
               "src/styles.scss"
             ],
             "scripts": []
