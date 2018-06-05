@@ -1,10 +1,10 @@
 {
   "name": "angular-electron",
-  "version": "4.0.0",
+  "version": "1.0.0",
   "description": "Angular 6 with Electron (Typescript + SASS + Hot Reload)",
   "homepage": "https://github.com/maximegris/angular-electron",
   "author": {
-    "name": "Maxime GRIS",
+    "name": "Mohammad R",
     "email": "maxime.gris@gmail.com"
   },
   "keywords": [
@@ -33,7 +33,10 @@
     "test": "ng test",
     "e2e": "ng e2e"
   },
-  "dependencies": {},
+  "dependencies": {
+    "mysql2": "^1.5.3",
+    "sequelize": "^4.37.9"
+  },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.6.3",
     "@angular/cli": "6.0.3",
@@ -52,6 +55,7 @@
     "@types/jasmine": "2.8.7",
     "@types/jasminewd2": "2.0.3",
     "@types/node": "8.9.4",
+    "@types/sequelize": "^4.27.20",
     "codelyzer": "4.2.1",
     "core-js": "2.5.6",
     "electron": "2.0.2",
